@@ -1,0 +1,33 @@
+From e00c40138dd8bda9daaa8e08f9cd33e2109a37a5 Mon Sep 17 00:00:00 2001
+From: Nicolas Aguirre <aguirre.nicolas@gmail.com>
+Date: Wed, 15 Apr 2020 22:37:45 +0200
+Subject: [PATCH 3/3] fix build error 3
+
+---
+ libopkg/pkg.c | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+
+diff --git a/libopkg/pkg.c b/libopkg/pkg.c
+index 5f3d1a8..e15fc24 100644
+--- a/libopkg/pkg.c
++++ b/libopkg/pkg.c
+@@ -1052,7 +1052,6 @@ char * pkg_formatted_field(pkg_t *pkg, const char *field )
+ 
+ void pkg_print_info(pkg_t *pkg, FILE *file)
+ {
+-     int t = 0;
+      char * buff;
+      if (pkg == NULL) {
+ 	return;
+@@ -1062,7 +1061,7 @@ void pkg_print_info(pkg_t *pkg, FILE *file)
+      if ( buff == NULL ) 
+          return;
+      if (strlen(buff)>2){
+-         t = fwrite(buff, 1, strlen(buff), file); /* TODO: check t */
++         fwrite(buff, 1, strlen(buff), file);
+      } 
+      free(buff);
+ }
+-- 
+2.20.1
+

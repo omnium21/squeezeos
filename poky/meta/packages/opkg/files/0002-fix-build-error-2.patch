@@ -1,0 +1,34 @@
+From ab36a791b29de5278664840a86af32aa0875733e Mon Sep 17 00:00:00 2001
+From: Nicolas Aguirre <aguirre.nicolas@gmail.com>
+Date: Wed, 15 Apr 2020 18:54:52 +0200
+Subject: [PATCH 2/2] fix build error 2
+
+---
+ libopkg/opkg_cmd.c | 6 ------
+ 1 file changed, 6 deletions(-)
+
+diff --git a/libopkg/opkg_cmd.c b/libopkg/opkg_cmd.c
+index 1e2a824..4ae5bea 100644
+--- a/libopkg/opkg_cmd.c
++++ b/libopkg/opkg_cmd.c
+@@ -777,17 +777,11 @@ static int opkg_info_status_cmd(opkg_conf_t *conf, int argc, char **argv, int in
+      pkg_vec_t *available;
+      pkg_t *pkg;
+      char *pkg_name = NULL;
+-     char **pkg_fields = NULL;
+-     int n_fields = 0;
+      char *buff ; // = (char *)malloc(1);
+ 
+      if (argc > 0) {
+ 	  pkg_name = argv[0];
+      }
+-     if (argc > 1) {
+-	  pkg_fields = &argv[1];
+-	  n_fields = argc - 1;
+-     }
+ 
+      available = pkg_vec_alloc();
+      if (installed_only)
+-- 
+2.20.1
+
