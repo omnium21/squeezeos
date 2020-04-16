@@ -1,0 +1,3 @@
+poky/bitbake/*
+poky/build/*
+poky/sources/*
