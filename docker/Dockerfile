@@ -13,4 +13,4 @@ RUN ln -sf /bin/bash /bin/sh
 RUN useradd -ms /bin/bash squeezeos
 WORKDIR /home/squeezeos
 
-CMD ["/bin/bash"]
+CMD ["su", "-", "squeezeos", "-c", "/bin/bash"]
