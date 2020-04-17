@@ -11,5 +11,4 @@ then
 fi
 
 echo "Starting squeezeos image builder..."
-docker run -it --rm  -v ${PWD}/../poky:/home/squeezeos/poky squeezeos_builder
-
+docker run -it --rm  -v ${PWD}/../:/home/squeezeos/ squeezeos_builder
