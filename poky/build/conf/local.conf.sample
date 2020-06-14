@@ -30,7 +30,7 @@ BBFILE_PRIORITY_normal = "5"
 BBFILE_PRIORITY_squeezeos = "9"
 
 # The machine to target
-MACHINE ?= "jive"
+MACHINE ?= "baby"
 #MACHINE ?= "qemuarm"
 
 # Other supported machines
