@@ -6,7 +6,7 @@ RUN apt-get update
 #RUN apt-get upgrade -y 
 RUN apt-get -y install build-essential python diffstat texinfo\
   texi2html cvs subversion wget gawk help2man xmlto curl \
-  zip subversion git-core gcc-multilib
+  zip subversion git-core gcc-multilib libncurses5-dev
 
 RUN ln -sf /bin/bash /bin/sh
 
